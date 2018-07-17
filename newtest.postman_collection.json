@@ -1,0 +1,74 @@
+{
+	"info": {
+		"_postman_id": "7abb446b-d8e6-44c5-2b5d-8e39aae4c3b0",
+		"name": "newtest",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "responsetime",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"",
+							"tests[\"Response time is less than 200ms\"] = responseTime < 200;"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "{{url}}/posts/1",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"posts",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "responsetime copy",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "7608f0b7-49cd-4981-bf55-799374563e3c",
+						"type": "text/javascript",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"",
+							"tests[\"Your test name\"] = jsonData[0].userId === 1;"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "{{url}}/posts/",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"posts",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
